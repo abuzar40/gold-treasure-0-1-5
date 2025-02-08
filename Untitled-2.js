@@ -30,3 +30,19 @@ window.addEventListener('click', (e) => {
         nftPopup.style.display = 'none';
     }
 });
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const errorMessage = document.getElementById('error-message');
+  
+  if (username === '' || password === '') {
+    errorMessage.textContent = 'Please fill in both fields.';
+    errorMessage.style.display = 'block';
+  } else {
+    errorMessage.style.display = 'none';
+    alert('Login successful!');
+    // Here, you would typically send the data to your server
+  }
+});
